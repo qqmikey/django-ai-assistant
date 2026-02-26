@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-ai-admin"
+version = "0.1.0"
+description = "Embedded AI assistant for Django Admin with read-only ORM execution."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Proprietary" }
+authors = [
+  { name = "qqmikey", email = "qqmikey@icloud.com" }
+]
+keywords = ["django", "django-admin", "ai", "assistant"]
+classifiers = [
+  "Framework :: Django",
+  "Framework :: Django :: 4.2",
+  "Framework :: Django :: 5.0",
+  "Framework :: Django :: 5.1",
+  "Framework :: Django :: 5.2",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+  "Django>=4.2",
+  "djangorestframework>=3.14",
+  "requests>=2.31",
+]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+django_ai_admin = [
+  "static/django_ai_admin/css/*.css",
+  "static/django_ai_admin/js/*.js",
+  "docs/*.md",
+]

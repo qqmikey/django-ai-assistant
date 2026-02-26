@@ -1,0 +1,2 @@
+recursive-include src/django_ai_admin/static *
+recursive-include src/django_ai_admin/docs *.md
