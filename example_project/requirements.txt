@@ -1,0 +1,4 @@
+Django>=5.2,<6.0
+djangorestframework>=3.14
+psycopg2-binary>=2.9
+requests>=2.31

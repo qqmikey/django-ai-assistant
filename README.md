@@ -67,3 +67,21 @@ DJANGO_AI_ADMIN_URL_PREFIX = "ai-assistant"
 DJANGO_AI_ADMIN_ADMIN_SITE = "backend.admin_site.admin_site"  # optional
 DJANGO_AI_ADMIN_OPENAI_BASE_URL = "https://api.openai.com/v1"
 ```
+
+## Docker Demo Project
+
+A ready-to-run example project is included in `example_project/` with simple `polls` models (`Question`, `Choice`) and admin integration.
+
+From the repository root:
+
+```bash
+cd example_project
+make dev
+```
+
+Then open:
+
+- `http://localhost:8000/admin/`
+- login: `admin` / `admin`
+
+See [`example_project/README.md`](example_project/README.md) for details.

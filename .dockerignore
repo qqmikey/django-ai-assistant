@@ -1,0 +1,14 @@
+.git
+.idea
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+.venv
+venv
+build
+dist
+*.egg-info
+example_project/app/staticfiles
+example_project/app/db.sqlite3
