@@ -1,4 +1,4 @@
-# djai
+# django-admin-ai-assistant
 
 Reusable Django application with an embedded AI assistant inside Django Admin.
 
@@ -89,7 +89,7 @@ See [`example_project/README.md`](example_project/README.md) for details.
 
 Package metadata currently uses:
 
-- package name: `djai`
+- package name: `django-admin-ai-assistant`
 - version: `0.1.0`
 
 To publish from GitHub Actions:
@@ -112,5 +112,5 @@ What happens automatically:
 Install command after publish:
 
 ```bash
-pip install djai==0.1.0
+pip install django-admin-ai-assistant==0.1.0
 ```
