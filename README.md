@@ -1,16 +1,24 @@
 # django-admin-ai-assistant
 
-Reusable Django application with an embedded AI assistant inside Django Admin.
+`django-admin-ai-assistant` embeds an AI assistant directly into Django Admin.
+
+It is designed for teams that need quick answers about project data without opening the Django shell, writing one-off ORM queries, or building custom admin pages. The assistant opens inside admin, accepts natural-language questions, generates Django ORM queries, and executes them in read-only mode.
+
+## Screenshot
+
+A project screenshot will be added here.
 
 ## Installation
 
-1. Install package dependencies and the app:
+Install the package from PyPI:
 
 ```bash
-pip install -e .
+pip install django-admin-ai-assistant
 ```
 
-2. Add apps in `settings.py`:
+## Connect to Your Django Project
+
+1. Add the required apps in `settings.py`:
 
 ```python
 INSTALLED_APPS = [
@@ -20,7 +28,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-3. Add URLs in root `urls.py`:
+2. Add the assistant URLs in your root `urls.py`:
 
 ```python
 from django.urls import include, path
@@ -31,13 +39,13 @@ urlpatterns = [
 ]
 ```
 
-4. Run migrations:
+3. Run migrations:
 
 ```bash
 python manage.py migrate
 ```
 
-5. Optional settings in `settings.py`:
+4. Optional settings in `settings.py`:
 
 ```python
 DJANGO_AI_ADMIN_URL_PREFIX = "ai-assistant"
@@ -47,7 +55,7 @@ DJANGO_AI_ADMIN_OPENAI_BASE_URL = "https://api.openai.com/v1"
 
 ## Usage
 
-### 1) Configure AI in Django Admin
+### 1) Configure the assistant in Django Admin
 
 1. Log in as superuser.
 2. Open `Admin -> Django Ai Admin -> AI configs`.
@@ -67,7 +75,7 @@ DJANGO_AI_ADMIN_OPENAI_BASE_URL = "https://api.openai.com/v1"
 3. Start a new chat and ask a data question about your project models.
 4. Review response, result, and optional details (interpretation/explanation/code).
 
-## Docker Demo Project
+## Example Project
 
 A ready-to-run example project is included in `example_project/` with simple `polls` models (`Question`, `Choice`) and admin integration.
 
@@ -84,33 +92,3 @@ Then open:
 - login: `admin` / `admin`
 
 See [`example_project/README.md`](example_project/README.md) for details.
-
-## Release (PyPI)
-
-Package metadata currently uses:
-
-- package name: `django-admin-ai-assistant`
-- version: `0.1.0`
-
-To publish from GitHub Actions:
-
-1. Create a PyPI API token and add it to repository secrets as `PYPI_API_TOKEN`.
-2. Make sure `pyproject.toml` version matches the release (for example `0.1.0`).
-3. Create and push a tag:
-
-```bash
-git tag v0.1.0
-git push origin v0.1.0
-```
-
-What happens automatically:
-
-- `Release` workflow builds `sdist` and `wheel`
-- creates a GitHub Release with attached artifacts
-- publishes to PyPI (if `PYPI_API_TOKEN` is configured)
-
-Install command after publish:
-
-```bash
-pip install django-admin-ai-assistant==0.1.0
-```
