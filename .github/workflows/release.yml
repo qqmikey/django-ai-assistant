@@ -52,9 +52,10 @@ jobs:
   pypi-publish:
     needs: build
     runs-on: ubuntu-latest
-    if: ${{ secrets.PYPI_API_TOKEN != '' }}
     permissions:
       id-token: write
+    env:
+      PYPI_API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
 
     steps:
       - name: Download build artifacts
@@ -63,7 +64,12 @@ jobs:
           name: dist
           path: dist/
 
+      - name: Skip PyPI publish when token is missing
+        if: ${{ env.PYPI_API_TOKEN == '' }}
+        run: echo "PYPI_API_TOKEN is not configured. Skipping PyPI publish."
+
       - name: Publish to PyPI
+        if: ${{ env.PYPI_API_TOKEN != '' }}
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          password: ${{ secrets.PYPI_API_TOKEN }}
+          password: ${{ env.PYPI_API_TOKEN }}
