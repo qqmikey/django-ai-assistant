@@ -6,7 +6,9 @@ It is designed for teams that need quick answers about project data without open
 
 ## Screenshot
 
-A project screenshot will be added here.
+![django-admin-ai-assistant demo](demo.png)
+
+Example workflow in Django Admin: the assistant lists the latest polls and then answers a follow-up question about the most recent poll.
 
 ## Installation
 
