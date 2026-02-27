@@ -84,3 +84,33 @@ Then open:
 - login: `admin` / `admin`
 
 See [`example_project/README.md`](example_project/README.md) for details.
+
+## Release (PyPI)
+
+Package metadata currently uses:
+
+- package name: `django-ai-admin`
+- version: `0.1.0`
+
+To publish from GitHub Actions:
+
+1. Create a PyPI API token and add it to repository secrets as `PYPI_API_TOKEN`.
+2. Make sure `pyproject.toml` version matches the release (for example `0.1.0`).
+3. Create and push a tag:
+
+```bash
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+What happens automatically:
+
+- `Release` workflow builds `sdist` and `wheel`
+- creates a GitHub Release with attached artifacts
+- publishes to PyPI (if `PYPI_API_TOKEN` is configured)
+
+Install command after publish:
+
+```bash
+pip install django-ai-admin==0.1.0
+```
