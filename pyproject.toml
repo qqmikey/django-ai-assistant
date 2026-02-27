@@ -8,12 +8,13 @@ version = "0.1.2"
 description = "Embedded AI assistant for Django Admin with read-only ORM execution."
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "Proprietary" }
+license = { file = "LICENSE" }
 authors = [
   { name = "qqmikey", email = "qqmikey@icloud.com" }
 ]
 keywords = ["django", "django-admin", "ai", "assistant"]
 classifiers = [
+  "License :: OSI Approved :: MIT License",
   "Framework :: Django",
   "Framework :: Django :: 4.2",
   "Framework :: Django :: 5.0",
