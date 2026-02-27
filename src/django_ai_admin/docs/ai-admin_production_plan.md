@@ -156,7 +156,7 @@
 - Goals:
 - Move module to standalone repository/package.
 - Features:
-- Package as `django-ai-admin`.
+- Package as `djai`.
 - Provider abstraction and settings-driven integration.
 - Demo project + Docker setup + seed data.
 - CI with tests, lint, coverage, release workflow.
